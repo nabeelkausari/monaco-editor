@@ -20,7 +20,7 @@ mkdir typings-test
 cd typings-test
 yarn init -yp
 ../node_modules/.bin/tsc --init
-echo "import '../out-monaco-editor-core';" > a.ts
+echo "import '../out-nabeel-monaco-editor-core';" > a.ts
 ../node_modules/.bin/tsc --noEmit
 cd ..
 
@@ -31,4 +31,4 @@ yarn run compile
 yarn test
 cd ../..
 
-# npm package is now in dependencies/vscode/out-monaco-editor-core, ready to be published
+# npm package is now in dependencies/vscode/out-nabeel-monaco-editor-core, ready to be published

@@ -6,10 +6,10 @@ Checkout [MAINTAINING.md](./MAINTAINING.md) for common maintaining tasks.
 
 This repository contains source code only for Monaco Editor Languages, the core editor source lives in the [vscode repository](https://github.com/microsoft/vscode).
 
-| repository                                                  | npm module                                                             | explanation                                                             |
-| ----------------------------------------------------------- | ---------------------------------------------------------------------- | ----------------------------------------------------------------------- |
-| [vscode](https://github.com/microsoft/vscode)               | [monaco-editor-core](https://www.npmjs.com/package/monaco-editor-core) | editor core functionality (language agnostic) is shipped out of vscode. |
-| [monaco-editor](https://github.com/microsoft/monaco-editor) | [monaco-editor](https://www.npmjs.com/package/monaco-editor)           | the Monaco Editor.                                                      |
+| repository                                                  | npm module                                                                           | explanation                                                             |
+| ----------------------------------------------------------- | ------------------------------------------------------------------------------------ | ----------------------------------------------------------------------- |
+| [vscode](https://github.com/microsoft/vscode)               | [nabeel-monaco-editor-core](https://www.npmjs.com/package/nabeel-monaco-editor-core) | editor core functionality (language agnostic) is shipped out of vscode. |
+| [monaco-editor](https://github.com/microsoft/monaco-editor) | [monaco-editor](https://www.npmjs.com/package/monaco-editor)                         | the Monaco Editor.                                                      |
 
 ## Contributing a new tokenizer / a new language
 

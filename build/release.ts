@@ -49,13 +49,13 @@ generateMetadata();
 	otherFiles = otherFiles.concat(readFiles('README.md', { base: '' }));
 	otherFiles = otherFiles.concat(readFiles('CHANGELOG.md', { base: '' }));
 	otherFiles = otherFiles.concat(
-		readFiles('node_modules/monaco-editor-core/min-maps/**/*', {
-			base: 'node_modules/monaco-editor-core/'
+		readFiles('node_modules/nabeel-monaco-editor-core/min-maps/**/*', {
+			base: 'node_modules/nabeel-monaco-editor-core/'
 		})
 	);
 	otherFiles = otherFiles.concat(
-		readFiles('node_modules/monaco-editor-core/LICENSE', {
-			base: 'node_modules/monaco-editor-core/'
+		readFiles('node_modules/nabeel-monaco-editor-core/LICENSE', {
+			base: 'node_modules/nabeel-monaco-editor-core/'
 		})
 	);
 
@@ -66,8 +66,8 @@ generateMetadata();
  * Release to `dev` or `min`.
  */
 function AMD_releaseOne(type: 'dev' | 'min') {
-	const coreFiles = readFiles(`node_modules/monaco-editor-core/${type}/**/*`, {
-		base: `node_modules/monaco-editor-core/${type}`
+	const coreFiles = readFiles(`node_modules/nabeel-monaco-editor-core/${type}/**/*`, {
+		base: `node_modules/nabeel-monaco-editor-core/${type}`
 	});
 	AMD_addPluginContribs(type, coreFiles);
 	writeFiles(coreFiles, `release/${type}`);
@@ -104,7 +104,7 @@ function AMD_addPluginContribs(type: 'dev' | 'min', files: IFile[]) {
 			return file.contents
 				.toString()
 				.replace(
-					/define\((['"][a-z\/\-]+\/fillers\/monaco-editor-core['"]),\[\],/,
+					/define\((['"][a-z\/\-]+\/fillers\/nabeel-monaco-editor-core['"]),\[\],/,
 					"define($1,['vs/editor/editor.api'],"
 				);
 		});
@@ -134,10 +134,10 @@ function AMD_addPluginContribs(type: 'dev' | 'min', files: IFile[]) {
 }
 
 function ESM_release() {
-	const coreFiles = readFiles(`node_modules/monaco-editor-core/esm/**/*`, {
-		base: 'node_modules/monaco-editor-core/esm',
+	const coreFiles = readFiles(`node_modules/nabeel-monaco-editor-core/esm/**/*`, {
+		base: 'node_modules/nabeel-monaco-editor-core/esm',
 		// we will create our own editor.api.d.ts which also contains the plugins API
-		ignore: ['node_modules/monaco-editor-core/esm/vs/editor/editor.api.d.ts']
+		ignore: ['node_modules/nabeel-monaco-editor-core/esm/vs/editor/editor.api.d.ts']
 	});
 	ESM_addImportSuffix(coreFiles);
 	ESM_addPluginContribs(coreFiles);
@@ -149,7 +149,7 @@ function ESM_release() {
 /**
  * Release a plugin to `esm`.
  * Adds a dependency to 'vs/editor/editor.api' in contrib files in order for `monaco` to be defined.
- * Rewrites imports for 'monaco-editor-core/**'
+ * Rewrites imports for 'nabeel-monaco-editor-core/**'
  */
 function ESM_releasePlugins() {
 	const files = readFiles(`out/release/esm/**/*`, { base: 'out/release/esm/' });
@@ -169,16 +169,16 @@ function ESM_releasePlugins() {
 
 			if (!/(^\.\/)|(^\.\.\/)/.test(importText)) {
 				// non-relative import
-				if (!/^monaco-editor-core/.test(importText)) {
+				if (!/^nabeel-monaco-editor-core/.test(importText)) {
 					console.error(`Non-relative import for unknown module: ${importText} in ${file.path}`);
 					process.exit(1);
 				}
 
-				if (importText === 'monaco-editor-core') {
-					importText = 'monaco-editor-core/esm/vs/editor/editor.api';
+				if (importText === 'nabeel-monaco-editor-core') {
+					importText = 'nabeel-monaco-editor-core/esm/vs/editor/editor.api';
 				}
 
-				const importFilePath = importText.substring('monaco-editor-core/esm/'.length);
+				const importFilePath = importText.substring('nabeel-monaco-editor-core/esm/'.length);
 				let relativePath = path
 					.relative(path.dirname(file.path), importFilePath)
 					.replace(/\\/g, '/');
@@ -286,8 +286,8 @@ function ESM_addPluginContribs(files: IFile[]) {
  * - append monaco.d.ts from plugins
  */
 function releaseDTS() {
-	const monacodts = readFiles('node_modules/monaco-editor-core/monaco.d.ts', {
-		base: 'node_modules/monaco-editor-core'
+	const monacodts = readFiles('node_modules/nabeel-monaco-editor-core/monaco.d.ts', {
+		base: 'node_modules/nabeel-monaco-editor-core'
 	})[0];
 
 	let contents = monacodts.contents.toString();
@@ -408,8 +408,8 @@ function cleanFile(contents: string): string {
  * - append ThirdPartyNotices.txt from plugins
  */
 function releaseThirdPartyNotices() {
-	const tpn = readFiles('node_modules/monaco-editor-core/ThirdPartyNotices.txt', {
-		base: 'node_modules/monaco-editor-core'
+	const tpn = readFiles('node_modules/nabeel-monaco-editor-core/ThirdPartyNotices.txt', {
+		base: 'node_modules/nabeel-monaco-editor-core'
 	})[0];
 
 	let contents = tpn.contents.toString();

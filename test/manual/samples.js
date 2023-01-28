@@ -1,4 +1,4 @@
-/// <reference path="../../node_modules/monaco-editor-core/monaco.d.ts" />
+/// <reference path="../../node_modules/nabeel-monaco-editor-core/monaco.d.ts" />
 
 define(['./generated/all-samples'], function (ALL_SAMPLES) {
 	var XHR_SAMPLES = {};

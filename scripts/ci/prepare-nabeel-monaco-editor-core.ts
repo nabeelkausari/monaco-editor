@@ -29,7 +29,7 @@ async function prepareMonacoEditorCoreReleaseStableOrNightly() {
 
 	await prepareMonacoEditorCoreRelease(version, ref);
 
-	// npm package is now in dependencies/vscode/out-monaco-editor-core, ready to be published
+	// npm package is now in dependencies/vscode/out-nabeel-monaco-editor-core, ready to be published
 }
 
 async function prepareMonacoEditorCoreRelease(version: string, vscodeRef: string) {
@@ -60,7 +60,7 @@ async function prepareMonacoEditorCoreRelease(version: string, vscodeRef: string
 	});
 
 	await group('Building & Testing', async () => {
-		await run(resolve(selfPath, './monaco-editor-core.sh'), { cwd: vscodePath });
+		await run(resolve(selfPath, './nabeel-monaco-editor-core.sh'), { cwd: vscodePath });
 	});
 }
 

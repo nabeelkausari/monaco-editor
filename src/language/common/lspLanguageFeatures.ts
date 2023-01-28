@@ -16,7 +16,7 @@ import {
 	IDisposable,
 	MarkerSeverity,
 	IEvent
-} from '../../fillers/monaco-editor-core';
+} from '../../fillers/nabeel-monaco-editor-core';
 
 export interface WorkerAccessor<T> {
 	(...more: Uri[]): Promise<T>;

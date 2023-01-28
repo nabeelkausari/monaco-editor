@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-# execute `npm install` to pick up local monaco-editor-core
+# execute `npm install` to pick up local nabeel-monaco-editor-core
 npm install
 # Install OS Dependencies for Playwright
 sudo npm run playwright-install-deps

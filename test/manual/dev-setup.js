@@ -3,9 +3,9 @@
 (function () {
 	const corePaths = {
 		src: '/vscode/out/vs',
-		'npm/dev': 'node_modules/monaco-editor-core/dev/vs',
-		'npm/min': 'node_modules/monaco-editor-core/min/vs',
-		built: '/vscode/out-monaco-editor-core/min/vs',
+		'npm/dev': 'node_modules/nabeel-monaco-editor-core/dev/vs',
+		'npm/min': 'node_modules/nabeel-monaco-editor-core/min/vs',
+		built: '/vscode/out-nabeel-monaco-editor-core/min/vs',
 		releaseDev: 'release/dev/vs',
 		releaseMin: 'release/min/vs'
 	};
@@ -76,8 +76,8 @@
 				loaderPathsConfig['vs'] = `${PATH_PREFIX}${corePath}`;
 			} else {
 				loaderPathsConfig[
-					'vs/fillers/monaco-editor-core'
-				] = `${PATH_PREFIX}/monaco-editor/out/amd/fillers/monaco-editor-core-amd`;
+					'vs/fillers/nabeel-monaco-editor-core'
+				] = `${PATH_PREFIX}/monaco-editor/out/amd/fillers/nabeel-monaco-editor-core-amd`;
 				loaderPathsConfig['vs/language'] = `${PATH_PREFIX}${pluginPath}/language`;
 				loaderPathsConfig['vs/basic-language'] = `${PATH_PREFIX}${pluginPath}/basic-language`;
 				loaderPathsConfig['vs'] = `${PATH_PREFIX}${corePath}`;
@@ -103,7 +103,7 @@
 					callback();
 					return;
 				}
-				// At this point we've loaded the monaco-editor-core
+				// At this point we've loaded the nabeel-monaco-editor-core
 				req(
 					[
 						'vs/basic-languages/monaco.contribution',

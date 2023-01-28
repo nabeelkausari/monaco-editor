@@ -4,7 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import * as mode from './cssMode';
-import { languages, Emitter, IEvent } from '../../fillers/monaco-editor-core';
+import { languages, Emitter, IEvent } from '../../fillers/nabeel-monaco-editor-core';
 
 export interface CSSFormatConfiguration {
 	/** separate selectors with newline (e.g. "a,\nbr" or "a, br"): Default: true */

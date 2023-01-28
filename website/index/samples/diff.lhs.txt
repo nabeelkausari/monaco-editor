@@ -1,11 +1,11 @@
 
 /*
-  © Microsoft. All rights reserved.
+  © Devness. All rights reserved.
 
   This library is supported for use in Windows Tailored Apps only.
 
-  Build: 6.2.8100.0 
-  Version: 0.5 
+  Build: 6.2.8100.0
+  Version: 0.5
 */
 
 (function (global, undefined) {
@@ -29,7 +29,7 @@
 					properties = properties || {};
 					properties[key] = member;
 					continue;
-				} 
+				}
 			}
 			// These next lines will be deleted
 			if (!enumerable) {
@@ -79,7 +79,7 @@
 			for (var i = 0, len = namespaceFragments.length; i < len; i++) {
 				var namespaceName = namespaceFragments[i];
 				if (!currentNamespace[namespaceName]) {
-					Object.defineProperty(currentNamespace, namespaceName, 
+					Object.defineProperty(currentNamespace, namespaceName,
 						{ value: {}, writable: false, enumerable: true, configurable: true }
 					);
 				}

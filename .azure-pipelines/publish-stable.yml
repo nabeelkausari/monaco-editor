@@ -29,15 +29,15 @@ extends:
   template: azure-pipelines/npm-package/pipeline.yml@templates
   parameters:
     npmPackages:
-      - name: monaco-editor-core
-        workingDirectory: $(Build.SourcesDirectory)/dependencies/vscode/out-monaco-editor-core
+      - name: nabeel-monaco-editor-core
+        workingDirectory: $(Build.SourcesDirectory)/dependencies/vscode/out-nabeel-monaco-editor-core
         testPlatforms: []
         buildSteps:
           - script: npm ci
             displayName: Install NPM dependencies
 
-          - script: yarn ts-node ./scripts/ci/prepare-monaco-editor-core stable
-            displayName: Setup, Build & Test monaco-editor-core
+          - script: yarn ts-node ./scripts/ci/prepare-nabeel-monaco-editor-core stable
+            displayName: Setup, Build & Test nabeel-monaco-editor-core
 
         tag: latest
         publishPackage: ${{ parameters.publishMonacoEditorCore }}

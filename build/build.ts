@@ -45,7 +45,7 @@ buildESM({
 		'src/language/css/cssMode.ts',
 		'src/language/css/css.worker.ts'
 	],
-	external: ['monaco-editor-core', '*/cssMode', '*/monaco.contribution']
+	external: ['nabeel-monaco-editor-core', '*/cssMode', '*/monaco.contribution']
 });
 buildAMD({
 	base: 'language/css',
@@ -76,7 +76,7 @@ buildESM({
 		'src/language/html/htmlMode.ts',
 		'src/language/html/html.worker.ts'
 	],
-	external: ['monaco-editor-core', '*/htmlMode', '*/monaco.contribution']
+	external: ['nabeel-monaco-editor-core', '*/htmlMode', '*/monaco.contribution']
 });
 buildAMD({
 	base: 'language/html',
@@ -107,7 +107,7 @@ buildESM({
 		'src/language/json/jsonMode.ts',
 		'src/language/json/json.worker.ts'
 	],
-	external: ['monaco-editor-core', '*/jsonMode', '*/monaco.contribution']
+	external: ['nabeel-monaco-editor-core', '*/jsonMode', '*/monaco.contribution']
 });
 buildAMD({
 	base: 'language/json',
@@ -143,7 +143,7 @@ buildESM({
 		'src/language/typescript/tsMode.ts',
 		'src/language/typescript/ts.worker.ts'
 	],
-	external: ['monaco-editor-core', '*/tsMode', '*/monaco.contribution']
+	external: ['nabeel-monaco-editor-core', '*/tsMode', '*/monaco.contribution']
 });
 buildAMD({
 	base: 'language/typescript',
@@ -182,7 +182,7 @@ glob('../src/basic-languages/*/*.contribution.ts', { cwd: __dirname }, function 
 			'src/basic-languages/monaco.contribution.ts',
 			'src/basic-languages/_.contribution.ts'
 		];
-		const external = ['monaco-editor-core', '*/_.contribution'];
+		const external = ['nabeel-monaco-editor-core', '*/_.contribution'];
 		for (const language of languages) {
 			entryPoints.push(`src/basic-languages/${language}/${language}.contribution.ts`);
 			entryPoints.push(`src/basic-languages/${language}/${language}.ts`);

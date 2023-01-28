@@ -1312,12 +1312,12 @@ Contributions to `monaco-languages`:
 
 ### Debt work
 
-- Removed HTML, razor, PHP and handlebars from `monaco-editor-core`:
-  - the `monaco-editor-core` is now finally language agnostic.
+- Removed HTML, razor, PHP and handlebars from `nabeel-monaco-editor-core`:
+  - the `nabeel-monaco-editor-core` is now finally language agnostic.
   - coloring for HTML, razor, PHP and handlebars is now coming in from `monaco-languages`.
   - language smarts for HTML, razor and handlebars now comes from `monaco-html`.
 - Packaging improvements:
-  - thanks to the removal of the old languages from `monaco-editor-core`, we could improve the bundling and reduce the number of .js files we ship.
+  - thanks to the removal of the old languages from `nabeel-monaco-editor-core`, we could improve the bundling and reduce the number of .js files we ship.
   - we are thinking about simplifying this further in the upcoming releases.
 
 ### Thank you

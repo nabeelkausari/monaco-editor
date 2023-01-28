@@ -23,7 +23,7 @@ import {
 	IRange,
 	MarkerTag,
 	MarkerSeverity
-} from '../../fillers/monaco-editor-core';
+} from '../../fillers/nabeel-monaco-editor-core';
 
 //#region utils copied from typescript to prevent loading the entire typescriptServices ---
 

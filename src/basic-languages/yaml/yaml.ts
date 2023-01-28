@@ -1,4 +1,4 @@
-import { languages } from '../../fillers/monaco-editor-core';
+import { languages } from '../../fillers/nabeel-monaco-editor-core';
 
 export const conf: languages.LanguageConfiguration = {
 	comments: {
